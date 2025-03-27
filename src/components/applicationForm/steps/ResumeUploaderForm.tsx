@@ -12,14 +12,13 @@ import {
   MAX_RESUME_SIZE_IN_BYTES,
   VALID_RESUME_FILE_EXTENSIONS,
 } from "@/schema/schema";
-import React from "react";
+
 import { useFormContext } from "react-hook-form";
 
 const ResumeUploaderForm = () => {
-  const [value, setValue] = React.useState<File[]>([]);
 
-  const { control, getFieldState, formState } =
-    useFormContext<FormSchemaType>();
+
+  const { control } = useFormContext<FormSchemaType>();
 
   return (
     <div>

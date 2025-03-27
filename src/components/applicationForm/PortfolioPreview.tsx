@@ -38,7 +38,7 @@ export function PortfolioPreview({
           className="space-y-2"
         >
           <div className="flex items-center gap-2">
-            <Link className="h-4 w-4" />
+            <Link className="h-4 w-4 hidden md:block" />
             <h3 className="font-semibold text-lg text-foreground">{title}</h3>
           </div>
           <p className="text-sm text-muted-foreground">{description}</p>

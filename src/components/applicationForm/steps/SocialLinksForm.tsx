@@ -68,7 +68,7 @@ const SocialLinksForm = () => {
         control={control}
         name="github"
         render={({ field }) => (
-          <FormItem className="col-span-2">
+          <FormItem className=" col-span-4 md:col-span-2">
             <FormLabel>Github Profile</FormLabel>
             <FormControl>
               <Input
@@ -91,7 +91,7 @@ const SocialLinksForm = () => {
         control={control}
         name="portfolio"
         render={({ field }) => (
-          <FormItem className="col-span-2">
+          <FormItem className="col-span-4 md:col-span-2">
             <FormLabel>Personal Portfolio</FormLabel>
             <FormControl>
               <Input

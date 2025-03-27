@@ -47,7 +47,7 @@ const AddressInfoForm = () => {
       const { latitude, longitude } = position.coords;
       const address = await fetchAddress(latitude, longitude);
 
-      const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      // const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
       setValue("country", address.country);
       setValue("zip", address?.zip);
@@ -76,7 +76,7 @@ const AddressInfoForm = () => {
   };
 
   return (
-    <div className="w-full grid grid-cols-12 gap-4 ">
+    <div className="w-full grid  grid-cols-12 gap-4 ">
       <FormField
         control={control}
         name="address"
@@ -101,9 +101,9 @@ const AddressInfoForm = () => {
                 aria-label="Autofill address"
               >
                 {isAutoFillActive ? (
-                  <Loader2 className="animate-spin h-4 w-4" />
+                  <Loader2 className="animate-spin size-2 md:size-4" />
                 ) : (
-                  <MapPin className="h-4 w-4" />
+                  <MapPin className="size-2 md:size-4" />
                 )}
               </Button>
             </div>
@@ -112,7 +112,7 @@ const AddressInfoForm = () => {
           </FormItem>
         )}
       />
-      <div className="space-y-2 col-span-4">
+      <div className="space-y-2 col-span-12 md:col-span-6 lg:col-span-4">
         <FormField
           control={control}
           name="country"
@@ -144,7 +144,7 @@ const AddressInfoForm = () => {
           )}
         />
       </div>
-      <div className="space-y-2 col-span-4">
+      <div className="space-y-2 col-span-12 md:col-span-6 lg:col-span-4">
         <FormField
           control={control}
           name="state"
@@ -178,7 +178,7 @@ const AddressInfoForm = () => {
           )}
         />
       </div>
-      <div className="space-y-2 col-span-4">
+      <div className="space-y-2 col-span-12 md:col-span-6 lg:col-span-4">
         <FormField
           control={control}
           name="city"
@@ -210,7 +210,7 @@ const AddressInfoForm = () => {
           )}
         />
       </div>
-      <div className="space-y-2 col-span-6">
+      <div className="space-y-2 col-span-12 md:col-span-6 lg:col-span-4">
         <FormField
           control={control}
           name="zip"
@@ -232,7 +232,7 @@ const AddressInfoForm = () => {
           )}
         />
       </div>
-      <div className="space-y-2 col-span-6">
+      <div className="space-y-2 col-span-12 md:col-span-6 lg:col-span-4">
         <FormField
           control={control}
           name="timeZone"

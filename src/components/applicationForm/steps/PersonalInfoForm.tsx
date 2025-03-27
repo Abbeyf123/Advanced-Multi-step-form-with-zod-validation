@@ -1,4 +1,4 @@
-import { Calendar } from "@/components/ui/calendarrrr";
+
 import {
   FormControl,
   FormDescription,
@@ -16,7 +16,7 @@ import { useFormContext } from "react-hook-form";
 const PersonalInfoForm = () => {
   const { control } = useFormContext<FormSchemaType>();
   return (
-    <div className="w-full grid grid-cols-4 gap-4">
+    <div className="w-full grid grid-cols-auto md:grid-cols-4 gap-4">
       <FormField
         control={control}
         name="firstName"

@@ -95,7 +95,7 @@ const Job = ({
           control={control}
           name={`jobs.${index}.title`}
           render={({ field }) => (
-            <FormItem className="space-y-3 col-span-3">
+            <FormItem className="space-y-3 col-span-12 md:col-span-6 lg:col-span-3">
               <FormLabel className="flex items-center">Job Title</FormLabel>
               <FormControl>
                 <Input
@@ -114,7 +114,7 @@ const Job = ({
           control={control}
           name={`jobs.${index}.company`}
           render={({ field }) => (
-            <FormItem className="space-y-3 col-span-3">
+            <FormItem className="space-y-3 col-span-12 md:col-span-6 lg:col-span-3">
               <FormLabel className="flex items-center">Company</FormLabel>
               <FormControl>
                 <Input
@@ -133,7 +133,7 @@ const Job = ({
           control={control}
           name={`jobs.${index}.from`}
           render={({ field }) => (
-            <FormItem className="space-y-3 col-span-3">
+            <FormItem className="space-y-3 col-span-12 md:col-span-6 lg:col-span-3">
               <FormLabel className="flex items-center">From</FormLabel>
               <FormControl>
                 <Popover>
@@ -179,7 +179,7 @@ const Job = ({
           control={control}
           name={`jobs.${index}.to`}
           render={({ field }) => (
-            <FormItem className="space-y-3 col-span-3">
+            <FormItem className="space-y-3 col-span-12 md:col-span-6 lg:col-span-3">
               <FormLabel className="flex items-center">To</FormLabel>
               <FormControl>
                 <Popover>
