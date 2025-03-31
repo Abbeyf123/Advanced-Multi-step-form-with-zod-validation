@@ -61,6 +61,8 @@ const steps = [
     inputs: ["resume"],
   },
 ] satisfies Step[];
+
+
 const ApplicationForm = () => {
   const onSubmit = (data: FormSchemaType) => {
     console.log(data);

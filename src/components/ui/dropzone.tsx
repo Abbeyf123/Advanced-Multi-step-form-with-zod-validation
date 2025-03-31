@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react";
+import  { forwardRef } from "react";
 import { useDropzone } from "react-dropzone";
 import { cn } from "@/lib/utils"; // Utility function for conditional class names
 import { Upload, X } from "lucide-react";
@@ -36,7 +36,7 @@ const DropzoneInput = forwardRef<HTMLDivElement, DropzoneInputProps>(
       maxSizeInBytes,
       multiple = false,
     },
-    ref
+    // ref
   ) => {
     const {
       getRootProps,
@@ -63,7 +63,7 @@ const DropzoneInput = forwardRef<HTMLDivElement, DropzoneInputProps>(
     });
 
     const handleRemoveFile = (index: number) => {
-      onValueChange(value.filter((f, i) => i !== index));
+      onValueChange(value.filter((_, i) => i !== index));
     };
 
     const dragError = getReactDropZoneErrorMessages(fileRejections);
@@ -136,28 +136,28 @@ export function FileList({ files, onRemove }: FileListProps) {
 
           return (
             <li
-              key={`${file.name}-${index}`}
-              className="flex items-center justify-between p-3  rounded-lg text-sm "
-            >
-              <div className="flex items-center space-x-2">
-                <Icon
-                  className="h-5 w-5"
-                  style={{ color: FileType?.themeColor }}
-                />
-                <span className="font-medium">{file.name}</span>
-                <span className="text-gray-400">
-                  ({getFormattedFileSize(file.size)})
-                </span>
-              </div>
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => onRemove(index)}
-                className="text-gray-400 hover:text-red-500"
-              >
-                <X className="h-4 w-4" />
-              </Button>
-            </li>
+  key={`${file.name}-${index}`}
+  className="flex flex-wrap items-center justify-between p-3 rounded-lg text-sm gap-2 sm:gap-4"
+>
+  <div className="flex items-center gap-2 flex-wrap min-w-0">
+    <Icon className="h-5 w-5" style={{ color: FileType?.themeColor }} />
+    <span className="font-medium truncate max-w-[120px] sm:max-w-[250px]">
+      {file.name}
+    </span>
+    <span className="text-gray-400 text-xs sm:text-sm">
+      ({getFormattedFileSize(file.size)})
+    </span>
+  </div>
+  <Button
+    variant="ghost"
+    size="icon"
+    onClick={() => onRemove(index)}
+    className="text-gray-400 hover:text-red-500"
+  >
+    <X className="h-4 w-4" />
+  </Button>
+</li>
+
           );
         })}
       </ul>
